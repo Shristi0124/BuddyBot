@@ -24,6 +24,12 @@ This is just the starting phase of the project, and I’ll be gradually adding n
 
 ---
 
+## 👥 Contributors
+
+- [@Shristi0124](https://github.com/Shristi0124) – Created the main GitHub repo 
+- **Abhishek Singh** – Collaborating on idea, features, and project direction 
+- [@rajpurohitpushpendra](https://github.com/rajpurohitpushpendra) – Working on setup, code structure, and UI 
+
 ## 🚀 How to Run (if you're a contributor)
 
 ```bash
@@ -32,10 +38,6 @@ cd Buddybot
 npm install
 npm start
 
-## 👥 Contributors
-
-- [@Shristi0124](https://github.com/Shristi0124) – Created the main GitHub repo 
-- **Abhishek Singh** – Collaborating on idea, features, and project direction 
-- [@rajpurohitpushpendra](https://github.com/rajpurohitpushpendra) – Working on setup, code structure, and UI  
+ 
 
 
