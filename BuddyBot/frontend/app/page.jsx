@@ -2,7 +2,9 @@
 
 import { useEffect, useState } from "react";
 import { Mic, MicOff, Moon, Sun } from "lucide-react";
-import SpeechToText from "@/components/SpeechToText";
+import SpeechToText from "../components/SpeechToText.client";
+
+
 
 export default function Home() {
   const [theme, setTheme] = useState("light");
