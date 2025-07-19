@@ -1,0 +1,31 @@
+{
+  "name": "buddybot",
+  "version": "1.0.0",
+  "description": "BuddyBot is a smart, interactive personal assistant that understands natural language, learns your preferences, and performs tasks like setting reminders and fetching weather updates using AI and APIs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shristi0124/BuddyBot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Shristi0124/BuddyBot/issues"
+  },
+  "homepage": "https://github.com/Shristi0124/BuddyBot#readme",
+  "dependencies": {
+    "next": "^15.4.2",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.11"
+  }
+}

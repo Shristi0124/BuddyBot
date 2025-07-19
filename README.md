@@ -98,43 +98,46 @@ Runs at: [http://localhost:3000](http://localhost:3000)
 
 ```
 BuddyBot/
-├── backend/
-│   ├── app/
-│   │   ├── main.py
-│   │   ├── routes/
-│   │   │   ├── chat.py
-│   │   │   └── weather.py
-│   │   ├── services/
-│   │   │   ├── nlu.py
-│   │   │   ├── reminder.py
-│   │   │   └── weather.py
-│   │   ├── utils/
-│   │   │   └── memory.py
-│   │   └── config.py
+│
+├── backend/                            # Backend logic (FastAPI + AI)
+│   ├── app/                            # Main FastAPI app
+│   │   ├── api/                        # API routes
+│   │   │   ├── routes.py
+│   │   │   └── __init__.py
+│   │   ├── core/                       # Core utilities (configs, logger)
+│   │   │   ├── config.py
+│   │   │   └── __init__.py
+│   │   ├── models/                     # Pydantic models
+│   │   ├── services/                   # AI logic (intent, memory, agents)
+│   │   └── main.py                     # Entry point
 │   ├── requirements.txt
-│   └── .env
+│   └── .env                            # Backend environment variables
 │
-├── frontend/
-│   ├── public/
-│   ├── src/
-│   │   ├── components/
-│   │   │   ├── ChatInput.jsx
-│   │   │   ├── ChatBubble.jsx
-│   │   │   └── ResponseCard.jsx
-│   │   ├── pages/
-│   │   │   ├── index.js
-│   │   │   └── _app.js
-│   │   ├── utils/
-│   │   │   └── api.js
-│   │   └── styles/
-│   │       └── globals.css
-│   ├── tailwind.config.js
+├── frontend/                           # Frontend (Next.js)
+│   ├── app/                            # Next.js App directory
+│   │   ├── layout.js
+│   │   ├── page.jsx
+│   │   └── globals.css
+│   ├── components/                     # Reusable components (mic, history)
+│   │   ├── MicButton.jsx
+│   │   └── TranscriptionCard.jsx
+│   ├── styles/                         # Tailwind and custom styles
+│   ├── public/                         # Static files (icons, etc.)
+│   ├── node_modules/
+│   ├── package.json
 │   ├── next.config.js
-│   └── package.json
+│   ├── postcss.config.mjs
+│   ├── tailwind.config.js             # Required for Tailwind CSS
+│   ├── jsconfig.json
+│   └── .gitignore
 │
-├── .gitignore
-├── README.md
-└── LICENSE
+├── database/                           # DB config or ORM models
+│   ├── mongo_config.py
+│   └── models.py
+│
+├── README.md                           # Project overview
+└── .gitignore
+
 ```
 
 ---
