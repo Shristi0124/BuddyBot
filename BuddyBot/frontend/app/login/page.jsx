@@ -3,7 +3,7 @@
 import React, { useState } from 'react'
 import { signIn } from 'next-auth/react'
 import { toast } from 'react-hot-toast'
-import Button from '@/components/ui/Button'
+import Button from '../components/ui/Button'
 
 export default function LoginPage() {
   const [isLoading, setIsLoading] = useState(false)
@@ -20,9 +20,11 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gray-100 px-4">
-      <div className="w-full max-w-md p-8 space-y-6 bg-white shadow-xl rounded-xl text-center">
-        <h2 className="text-2xl font-bold text-gray-800">Welcome to BuddyBot</h2>
+    <div className="flex min-h-screen items-center justify-center bg-gray-100 px-4 dark:bg-black dark:text-white">
+      <div className="w-full max-w-md p-8 space-y-6 bg-white shadow-xl rounded-xl text-center dark:bg-zinc-900">
+        <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-100">
+          Welcome to BuddyBot
+        </h2>
 
         <Button
           onClick={loginWithGoogle}

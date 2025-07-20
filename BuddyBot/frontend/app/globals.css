@@ -21,9 +21,8 @@
 
 body {
   @apply font-sans;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
-
 
 /* Add to globals.css */
 .custom-scrollbar::-webkit-scrollbar {
@@ -34,13 +33,12 @@ body {
   border-radius: 10px;
 }
 
-
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 /* Optional: Smooth transitions */
 html {
+  scroll-behavior: smooth;
   transition: background-color 0.3s, color 0.3s;
 }

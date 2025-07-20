@@ -1,14 +1,14 @@
-'use client'
+// D:\SHRISTI\BuddyBot\BuddyBot\frontend\components\ui\Button.jsx
+import React from 'react'
 
-export default function Button({ children, onClick, disabled }) {
+export default function Button({ children, onClick, isLoading, className = '' }) {
   return (
     <button
       onClick={onClick}
-      disabled={disabled}
-      className={`px-4 py-2 text-white font-semibold rounded-lg shadow-md transition 
-        ${disabled ? 'bg-gray-400 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700'}`}
+      disabled={isLoading}
+      className={`px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition ${className}`}
     >
-      {children}
+      {isLoading ? 'Loading...' : children}
     </button>
   )
 }

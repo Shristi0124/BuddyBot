@@ -3,7 +3,8 @@
 import React, { useState } from 'react'
 import { signIn } from 'next-auth/react'
 import { toast } from 'react-hot-toast'
-import Button from '@/components/ui/Button'
+import HeroSection from '../components/HeroSection'
+import Button from '../components/ui/Button'
 
 export default function LoginPage() {
   const [isLoading, setIsLoading] = useState(false)
