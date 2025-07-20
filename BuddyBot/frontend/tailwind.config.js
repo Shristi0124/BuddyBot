@@ -21,6 +21,7 @@ module.exports = {
       },
     },
   },
+  
   plugins: [
     require('@tailwindcss/forms'),    // For better form styling
     require('@tailwindcss/typography'), // For prose/markdown
