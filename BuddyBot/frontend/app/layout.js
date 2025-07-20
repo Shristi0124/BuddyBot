@@ -3,6 +3,8 @@ import '../styles/globals.css'
 import { Inter } from 'next/font/google'
 import Navbar from '../components/Navbar'
 import { ThemeProvider } from 'next-themes'
+import HeroSection from '../components/HeroSection'
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -24,9 +26,10 @@ export default function RootLayout({ children }) {
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <div className="bg-backgroundLight text-textLight dark:bg-backgroundDark dark:text-textDark min-h-screen">
             <Navbar />
+            <HeroSection />
             <main className="px-4 py-6 max-w-6xl mx-auto">{children}</main>
             <footer className="text-center text-sm text-gray-500 dark:text-gray-400 py-4">
-              © {new Date().getFullYear()} BuddyBot. All rights reserved.
+              {new Date().getFullYear()} BuddyBot. All rights reserved.
             </footer>
           </div>
         </ThemeProvider>

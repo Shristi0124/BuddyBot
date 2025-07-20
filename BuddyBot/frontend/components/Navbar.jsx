@@ -1,43 +1,36 @@
 'use client'
 
 import Link from 'next/link'
-import ThemeToggle from './ThemeToggle'
+import { useTheme } from 'next-themes'
+import { useEffect, useState } from 'react'
+import { Moon, Sun } from 'lucide-react'
 
 export default function Navbar() {
+  const { theme, setTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => setMounted(true), [])
+
+  if (!mounted) return null
+  const isDark = theme === 'dark'
+
   return (
-    <nav className="bg-white dark:bg-zinc-900 shadow px-6 py-4 flex justify-between items-center font-sans transition-all">
-      {/* Logo */}
-      <Link
-        href="/"
-        className="text-3xl font-extrabold text-indigo-600 dark:text-indigo-400 tracking-tight"
-      >
-        BuddyBot 🤖
+    <nav className="flex justify-between items-center px-6 py-4 shadow-md bg-white dark:bg-zinc-900">
+      <Link href="/" className="text-2xl font-bold text-blue-600 dark:text-blue-400">
+        BuddyBot
       </Link>
 
-      {/* Navigation + Controls */}
-      <div className="flex items-center space-x-4 text-base font-medium">
-        <Link href="/" className="text-zinc-800 dark:text-zinc-200 hover:underline transition">
-          Home
-        </Link>
-        <Link href="/about" className="text-zinc-800 dark:text-zinc-200 hover:underline transition">
-          About
-        </Link>
-        <Link href="/features" className="text-zinc-800 dark:text-zinc-200 hover:underline transition">
-          Features
-        </Link>
-        <Link href="/contact" className="text-zinc-800 dark:text-zinc-200 hover:underline transition">
-          Contact
-        </Link>
+      <div className="flex gap-6 items-center">
+        <Link href="/home" className="text-lg hover:text-blue-500 dark:hover:text-blue-300">Home</Link>
+        <Link href="/login" className="text-lg hover:text-blue-500 dark:hover:text-blue-300">Login</Link>
+        <Link href="/login" className="text-lg hover:text-blue-500 dark:hover:text-blue-300">About</Link>
 
-        {/* Theme Toggle inline with nav links */}
-        <ThemeToggle />
-
-        {/* Login Button */}
-        <Link href="/login">
-          <button className="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 transition text-sm">
-            Login
-          </button>
-        </Link>
+        <button
+          onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+          className="ml-4 p-2 rounded"
+        >
+          {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+        </button>
       </div>
     </nav>
   )

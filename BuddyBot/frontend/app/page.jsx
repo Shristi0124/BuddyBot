@@ -5,6 +5,9 @@ import { signIn } from "next-auth/react";
 import { toast } from "react-hot-toast";
 import HeroSection from "../components/HeroSection";
 import Button from "../components/ui/Button";
+import WeatherCard from "../components/WeatherCard";
+import Notes from "../components/Notes";
+import Reminders from "../components/Reminders";
 
 export default function LoginPage() {
   const [isLoading, setIsLoading] = useState(false);
@@ -31,8 +34,9 @@ export default function LoginPage() {
           onClick={loginWithGoogle}
           className="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 transition text-sm">
           Sign in with Google
+          <HeroSection />
         </Button>
       </div>
     </div>
   );
-}
+}    

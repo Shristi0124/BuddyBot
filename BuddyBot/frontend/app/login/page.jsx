@@ -17,9 +17,11 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-white dark:bg-black">
+    <div className="flex flex-1 items-center justify-center">
       <div className="p-8 bg-gray-100 dark:bg-gray-900 rounded-xl shadow-md text-center">
-        <h1 className="text-2xl font-bold mb-6 text-black dark:text-white">Sign in to BuddyBot</h1>
+        <h1 className="text-2xl font-bold mb-6 text-black dark:text-white">
+          Sign in to BuddyBot
+        </h1>
         <button
           onClick={handleGoogleSignIn}
           className="bg-white border border-gray-300 px-6 py-3 rounded-lg flex items-center gap-3 hover:shadow-md dark:bg-gray-800 dark:text-white"
