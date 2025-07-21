@@ -1,72 +1,60 @@
-'use client'
+'use client';
 
-import { useState, useEffect } from 'react'
-import { useRouter } from 'next/navigation'
-import { LogOut, CloudSun, ClipboardList, Bot } from 'lucide-react'
-import Link from 'next/link'
+import React from 'react';
+import { motion } from 'framer-motion';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
 
 export default function HomePage() {
-  const router = useRouter()
-  const [user, setUser] = useState(null)
-
-  useEffect(() => {
-    // Simulate fetching user info from localStorage or session
-    const storedUser = localStorage.getItem('buddybot_user')
-    if (storedUser) {
-      setUser(JSON.parse(storedUser))
-    } else {
-      router.push('/login')
-    }
-  }, [])
-
-  const handleLogout = () => {
-    localStorage.removeItem('buddybot_user')
-    router.push('/login')
-  }
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-100 via-white to-blue-200 text-gray-800">
-      <div className="max-w-4xl mx-auto py-12 px-6">
-        <header className="flex items-center justify-between mb-8">
-          <div>
-            <h1 className="text-4xl font-bold">👋 Welcome, {user?.name || 'User'}!</h1>
-            <p className="text-sm text-gray-600 mt-1">Your AI-Powered Personal Assistant is ready.</p>
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      className="min-h-screen px-6 py-12 flex flex-col items-center justify-center bg-gradient-to-br from-slate-900 to-gray-800 text-white"
+    >
+      <h1 className="text-4xl font-bold text-center mb-4">Welcome to BuddyBot 🤖</h1>
+      <p className="text-lg text-center max-w-2xl mb-8">
+        Your intelligent AI assistant to help manage your tasks, understand your needs, and learn with you.
+      </p>
+
+      <div className="bg-gray-900 border border-gray-700 rounded-2xl shadow-xl p-6 w-full max-w-3xl space-y-6">
+        <section>
+          <h2 className="text-2xl font-semibold mb-2">🌟 Features</h2>
+
+          <div className="space-y-4">
+            <div>
+              <h3 className="text-xl font-semibold">1. Natural Language Understanding (NLU)</h3>
+              <ul className="list-disc list-inside ml-4 text-sm text-gray-300">
+                <li>Intent recognition (e.g., set reminder, get weather)</li>
+                <li>Entity extraction (e.g., time, location)</li>
+                <li>Context-aware conversation tracking</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-semibold">2. Personalized Task Execution</h3>
+              <ul className="list-disc list-inside ml-4 text-sm text-gray-300">
+                <li>Weather queries via OpenWeatherMap API</li>
+                <li>Task automation (reminders, notes)</li>
+                <li>Integration-ready with external APIs</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-semibold">3. User-Centric Memory (Planned)</h3>
+              <ul className="list-disc list-inside ml-4 text-sm text-gray-300">
+                <li>Short-term and long-term memory</li>
+                <li>Learns habits, preferences, and user profiles</li>
+              </ul>
+            </div>
           </div>
-          <button
-            onClick={handleLogout}
-            className="flex items-center bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-full text-sm shadow"
-          >
-            <LogOut size={16} className="mr-2" />
-            Logout
-          </button>
-        </header>
-
-        <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <Link href="/weather">
-            <div className="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition cursor-pointer">
-              <CloudSun className="text-blue-400 mb-2" size={32} />
-              <h2 className="text-lg font-semibold">Weather</h2>
-              <p className="text-sm text-gray-500">Get real-time weather updates using OpenWeatherMap.</p>
-            </div>
-          </Link>
-
-          <Link href="/tasks">
-            <div className="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition cursor-pointer">
-              <ClipboardList className="text-green-400 mb-2" size={32} />
-              <h2 className="text-lg font-semibold">Reminders & Tasks</h2>
-              <p className="text-sm text-gray-500">Set and view your notes, reminders, and tasks.</p>
-            </div>
-          </Link>
-
-          <Link href="/chat">
-            <div className="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition cursor-pointer">
-              <Bot className="text-purple-400 mb-2" size={32} />
-              <h2 className="text-lg font-semibold">Chat with BuddyBot</h2>
-              <p className="text-sm text-gray-500">Interact using natural language. Try “What's the weather?”</p>
-            </div>
-          </Link>
         </section>
       </div>
-    </div>
-  )
+
+      <Link href="/login">
+        <Button className="mt-8">Login to BuddyBot</Button>
+      </Link>
+    </motion.div>
+  );
 }

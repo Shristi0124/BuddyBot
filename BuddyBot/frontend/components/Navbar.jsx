@@ -23,7 +23,7 @@ export default function Navbar() {
       <div className="flex gap-6 items-center">
         <Link href="/home" className="text-lg hover:text-blue-500 dark:hover:text-blue-300">Home</Link>
         <Link href="/login" className="text-lg hover:text-blue-500 dark:hover:text-blue-300">Login</Link>
-        <Link href="/login" className="text-lg hover:text-blue-500 dark:hover:text-blue-300">About</Link>
+        <Link href="/about" className="text-lg hover:text-blue-500 dark:hover:text-blue-300">About</Link>
 
         <button
           onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
