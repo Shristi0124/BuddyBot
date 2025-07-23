@@ -1,47 +1,47 @@
 'use client';
 
-import React from 'react';
-import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { Button } from '../components/ui/button';
+import Button from '../../components/ui/Button';
 
 export default function AboutPage() {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      className="min-h-screen px-6 py-12 flex flex-col items-center justify-center bg-gradient-to-br from-slate-900 to-gray-800 text-white"
-    >
-      <h1 className="text-4xl font-bold mb-6 text-center">About BuddyBot 🤖</h1>
+    <>
+      {/* Personal Introduction */}
+      <h1 className="text-4xl sm:text-5xl font-extrabold text-center mb-6 bg-gradient-to-r from-sky-400 to-purple-500 text-transparent bg-clip-text">
+        Hi, I'm Shristi 👋
+      </h1>
 
-      <div className="bg-gray-900 border border-gray-700 rounded-2xl shadow-xl p-6 w-full max-w-3xl space-y-6">
-        <p className="text-lg text-gray-300">
-          <strong>BuddyBot</strong> is your intelligent digital assistant designed to help you stay organized, automate tasks, and access real-time information using the power of AI.
-        </p>
+      <p className="text-center text-gray-300 max-w-2xl mx-auto mb-10 text-lg">
+        A Computer Science Engineering student passionate about AI, NLP, and building intelligent systems. Currently leading the development of an AI-powered assistant called <strong className="text-blue-400">BuddyBot</strong>.
+      </p>
+
+      {/* Project Overview Card */}
+      <div className="rounded-3xl border border-gray-700 bg-white/5 backdrop-blur-md shadow-2xl p-8 space-y-6 transition hover:shadow-[0_0_40px_rgba(255,255,255,0.05)]">
+        <h2 className="text-2xl font-semibold text-white">🤖 BuddyBot – AI-Powered Personalized Assistant</h2>
 
         <p className="text-gray-300">
-          Built using modern technologies like <strong>Next.js</strong>, <strong>FastAPI</strong>, and advanced AI/NLP models, BuddyBot supports:
+          BuddyBot is a smart, interactive personal assistant that understands natural language, learns user preferences, and performs tasks like setting reminders and fetching weather updates using AI and APIs.
         </p>
 
-        <ul className="list-disc list-inside ml-4 text-sm text-gray-300">
-          <li>Conversational understanding and contextual responses</li>
-          <li>Integration with APIs (weather, notes, reminders)</li>
-          <li>User preference learning and personalization</li>
+        <ul className="list-disc list-inside ml-4 text-sm text-gray-300 space-y-1">
+          <li>🧠 Intent & entity recognition for natural conversation</li>
+          <li>🌐 Real-time weather, notes, reminders with API integration</li>
+          <li>🧩 Memory system (planned): user habits, personalization</li>
         </ul>
 
-        <p className="text-gray-300">
-          Whether you want to check the weather, create a to-do list, or interact naturally with an AI agent, BuddyBot is your daily digital companion.
-        </p>
-
-        <p className="text-gray-300">
-          This project is proudly developed by a passionate student team, combining AI, web development, and creative design to bring real-world applications to life.
+        <p className="text-sm text-gray-500 italic">
+          Built using Next.js, FastAPI, OpenAI, spaCy, Tailwind CSS, and more.
         </p>
       </div>
 
-      <Link href="/">
-        <Button className="mt-8">← Back to Home</Button>
-      </Link>
-    </motion.div>
+      {/* Back Button */}
+      <div className="mt-10 flex justify-center">
+        <Link href="/">
+          <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-purple-700 hover:to-blue-700 text-white px-6 py-2 rounded-xl font-semibold shadow-md transition-transform duration-300 transform hover:scale-105">
+            ← Back to Home
+          </Button>
+        </Link>
+      </div>
+    </>
   );
 }

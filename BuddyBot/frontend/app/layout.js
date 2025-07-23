@@ -1,39 +1,33 @@
-// app/layout.js
-import '../styles/globals.css'
-import { Inter } from 'next/font/google'
-import Navbar from '../components/Navbar'
-import { ThemeProvider } from 'next-themes'
-import HeroSection from '../components/HeroSection'
+// app/(home)/layout.jsx
 
-
-const inter = Inter({ subsets: ['latin'] })
+import React from 'react';
+import Navbar from '../components/Navbar';
+import AnimatedLayout from '../components/AnimatedLayout';
+import { ThemeProvider } from 'next-themes';
+import './globals.css'; // global styles
 
 export const metadata = {
-  title: 'BuddyBot',
-  description: 'Your daily mindful productivity assistant',
-  icons: {
-    icon: '/favicon.ico',
-  },
-  viewport: 'width=device-width, initial-scale=1',
-  keywords: ['AI Assistant', 'BuddyBot', 'Mindfulness', 'Productivity'],
-}
+  title: 'BuddyBot - Home',
+  description: 'Your personalized AI assistant',
+};
 
-export default function RootLayout({ children }) {
+export default function HomeLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head />
-      <body className={`${inter.className} transition-colors duration-300`}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <div className="bg-backgroundLight text-textLight dark:bg-backgroundDark dark:text-textDark min-h-screen">
-            <Navbar />
-            <HeroSection />
-            <main className="px-4 py-6 max-w-6xl mx-auto">{children}</main>
-            <footer className="text-center text-sm text-gray-500 dark:text-gray-400 py-4">
-              {new Date().getFullYear()} BuddyBot. All rights reserved.
-            </footer>
-          </div>
+      <body
+        className="min-h-screen font-sans transition-colors duration-300
+                   bg-gradient-to-br from-[#f0f4ff] to-[#e6f7ff] 
+                   dark:from-[#1a1c2c] dark:to-[#12131a] 
+                   text-gray-900 dark:text-gray-100"
+      >
+        <ThemeProvider attribute="class" enableSystem defaultTheme="system">
+          <Navbar />
+          <AnimatedLayout>
+            {children}
+          </AnimatedLayout>
         </ThemeProvider>
       </body>
     </html>
-  )
+  );
 }

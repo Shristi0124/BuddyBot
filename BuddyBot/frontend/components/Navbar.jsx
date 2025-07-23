@@ -1,37 +1,54 @@
 'use client'
 
 import Link from 'next/link'
-import { useTheme } from 'next-themes'
-import { useEffect, useState } from 'react'
-import { Moon, Sun } from 'lucide-react'
+import ThemeToggle from './ThemeToggle'
 
 export default function Navbar() {
-  const { theme, setTheme } = useTheme()
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(() => setMounted(true), [])
-
-  if (!mounted) return null
-  const isDark = theme === 'dark'
-
   return (
-    <nav className="flex justify-between items-center px-6 py-4 shadow-md bg-white dark:bg-zinc-900">
-      <Link href="/" className="text-2xl font-bold text-blue-600 dark:text-blue-400">
-        BuddyBot
-      </Link>
+    <nav className="fixed top-0 left-0 right-0 bg-white dark:bg-gray-900 shadow-md z-50 transition-all duration-300 ease-in-out">
+      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        {/* Logo */}
+        <h1 className="text-2xl font-extrabold tracking-wide text-blue-600 dark:text-blue-400">
+          BuddyBot
+        </h1>
 
-      <div className="flex gap-6 items-center">
-        <Link href="/home" className="text-lg hover:text-blue-500 dark:hover:text-blue-300">Home</Link>
-        <Link href="/login" className="text-lg hover:text-blue-500 dark:hover:text-blue-300">Login</Link>
-        <Link href="/about" className="text-lg hover:text-blue-500 dark:hover:text-blue-300">About</Link>
+        {/* Navigation Links */}
+        <div className="flex items-center gap-6">
+          {['/', '/about', '/dashboard', '/login'].map((path, index) => {
+            const label = ['Home', 'About', 'Dashboard', 'Login'][index]
+            return (
+              <Link
+                key={label}
+                href={path}
+                className="relative text-gray-800 dark:text-gray-100 font-medium transition-colors hover:text-blue-600 dark:hover:text-blue-400"
+              >
+                <span className="hover-underline">{label}</span>
+              </Link>
+            )
+          })}
 
-        <button
-          onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-          className="ml-4 p-2 rounded"
-        >
-          {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-        </button>
+          {/* Theme Toggle */}
+          <ThemeToggle />
+        </div>
       </div>
+
+      {/* Optional: animated underline style */}
+      <style jsx>{`
+        .hover-underline::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: -2px;
+          width: 0;
+          height: 2px;
+          background-color: currentColor;
+          transition: width 0.3s ease-in-out;
+        }
+
+        .hover-underline:hover::after {
+          width: 100%;
+        }
+      `}</style>
     </nav>
   )
 }

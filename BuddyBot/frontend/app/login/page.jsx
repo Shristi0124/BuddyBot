@@ -1,35 +1,43 @@
-'use client'
+'use client';
 
-import { signIn } from 'next-auth/react'
-import { useState } from 'react'
+import { useState } from 'react';
+import { signIn } from 'next-auth/react';
+import { toast } from 'react-hot-toast';
 
 export default function LoginPage() {
-  const [loading, setLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleGoogleSignIn = async () => {
-    setLoading(true)
+  const loginWithGoogle = async () => {
+    setIsLoading(true);
     try {
-      await signIn('google', { callbackUrl: '/' })
+      await signIn('google', { callbackUrl: '/' });
     } catch (error) {
-      console.error('Sign-in error:', error)
-      setLoading(false)
+      toast.error('Login failed');
+    } finally {
+      setIsLoading(false);
     }
-  }
+  };
 
   return (
-    <div className="flex flex-1 items-center justify-center">
-      <div className="p-8 bg-gray-100 dark:bg-gray-900 rounded-xl shadow-md text-center">
-        <h1 className="text-2xl font-bold mb-6 text-black dark:text-white">
-          Sign in to BuddyBot
-        </h1>
+    <>
+      <div className="flex flex-col items-center justify-center min-h-screen px-4">
+        <h1 className="text-3xl font-bold mb-2">Login to BuddyBot</h1>
+        <p className="text-gray-500 text-sm mt-2">
+          Use your Google account to continue
+        </p>
+
         <button
-          onClick={handleGoogleSignIn}
-          className="bg-white border border-gray-300 px-6 py-3 rounded-lg flex items-center gap-3 hover:shadow-md dark:bg-gray-800 dark:text-white"
+          onClick={loginWithGoogle}
+          disabled={isLoading}
+          className={`mt-6 px-4 py-2 rounded text-white font-medium transition ${
+            isLoading
+              ? 'bg-gray-400 cursor-not-allowed'
+              : 'bg-red-500 hover:bg-red-600'
+          }`}
         >
-          <img src="/google-icon.svg" alt="Google" className="w-5 h-5" />
-          {loading ? 'Signing in...' : 'Sign in with Google'}
+          {isLoading ? 'Logging in...' : 'Sign in with Google'}
         </button>
       </div>
-    </div>
-  )
+    </>
+  );
 }
