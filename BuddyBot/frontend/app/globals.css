@@ -8,8 +8,6 @@ html, body {
   margin: 0;
   font-family: 'Inter', sans-serif;
   scroll-behavior: smooth;
-  background-color: white;
-  color: black;
   transition: background-color 0.3s, color 0.3s;
 }
 
