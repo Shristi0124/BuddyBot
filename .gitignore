@@ -1,2 +1,3 @@
 "BuddyBot/backend/venv/" 
-"BuddyBot/frontend/node_modules/" 
+"__pycache__/" 
+"*.pyc" 
