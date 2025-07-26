@@ -1,3 +1,8 @@
 "BuddyBot/backend/venv/" 
 "__pycache__/" 
 "*.pyc" 
+".env" 
+"BuddyBot/backend/venv/" 
+"__pycache__/" 
+"*.pyc" 
+".env" 
