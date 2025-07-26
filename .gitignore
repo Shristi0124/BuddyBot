@@ -1,3 +1,17 @@
-"BuddyBot/backend/venv/" 
-"__pycache__/" 
-"*.pyc" 
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+venv/
+env/
+.env
+.venv/
+ECHO is on.
+# Node.js
+node_modules/
+ECHO is on.
+# System
+.DS_Store
+Thumbs.db
