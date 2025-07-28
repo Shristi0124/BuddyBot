@@ -1,37 +1,43 @@
-'use client'
+'use client';
 
-import { useState } from 'react'
-import { signIn } from 'next-auth/react'
-import { toast } from 'react-hot-toast'
+import { useState } from 'react';
+import { signIn } from 'next-auth/react';
+import { toast } from 'react-hot-toast';
 
 export default function LoginPage() {
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(false);
 
   const loginWithGoogle = async () => {
-    setIsLoading(true)
+    setIsLoading(true);
     try {
-      await signIn('google', { callbackUrl: '/' })
+      await signIn('google', { callbackUrl: '/' });
     } catch (error) {
-      console.error(error)
-      toast.error('Login failed')
-      setIsLoading(false)
+      toast.error('Login failed');
+    } finally {
+      setIsLoading(false);
     }
-  }
+  };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 px-4">
-      <div className="bg-white shadow-lg rounded-xl p-8 w-full max-w-md text-center">
-        <h2 className="text-2xl font-bold text-gray-800">Login to BuddyBot</h2>
-        <p className="text-gray-500 text-sm mt-2">Use your Google account to continue</p>
+    <>
+      <div className="flex flex-col items-center justify-center min-h-screen px-4">
+        <h1 className="text-3xl font-bold mb-2">Login to BuddyBot</h1>
+        <p className="text-gray-500 text-sm mt-2">
+          Use your Google account to continue
+        </p>
 
-        <Button
+        <button
           onClick={loginWithGoogle}
           disabled={isLoading}
-          className="mt-6 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition"
+          className={`mt-6 px-4 py-2 rounded text-white font-medium transition ${
+            isLoading
+              ? 'bg-gray-400 cursor-not-allowed'
+              : 'bg-red-500 hover:bg-red-600'
+          }`}
         >
-          {isLoading ? 'Signing in...' : 'Sign in with Google'}
-        </Button>
+          {isLoading ? 'Logging in...' : 'Sign in with Google'}
+        </button>
       </div>
-    </div>
-  )
+    </>
+  );
 }

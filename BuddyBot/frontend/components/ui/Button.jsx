@@ -1,14 +1,10 @@
-// D:\SHRISTI\BuddyBot\BuddyBot\frontend\components\ui\Button.jsx
-import React from 'react'
-
-export default function Button({ children, onClick, isLoading, className = '' }) {
+export default function Button({ children, ...props }) {
   return (
     <button
-      onClick={onClick}
-      disabled={isLoading}
-      className={`px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition ${className}`}
+      {...props}
+      className={`px-4 py-2 rounded bg-blue-600 hover:bg-blue-700 text-white ${props.className || ''}`}
     >
-      {isLoading ? 'Loading...' : children}
+      {children}
     </button>
-  )
+  );
 }

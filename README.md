@@ -145,7 +145,7 @@ BuddyBot/
 ## 👥 Contributors
 
 * **[@Shristi0124](https://github.com/Shristi0124)** – Created the main GitHub repo
-* **Abhishek Singh** – Collaborating on idea, features, and project direction
+
 * **[@rajpurohitpushpendra](https://github.com/rajpurohitpushpendra)** – Working on setup, code structure, and UI
 
 ---

@@ -1,24 +1,19 @@
-// app/layout.js
-import '../styles/globals.css'
-import { Inter } from 'next/font/google'
-import Navbar from '../components/Navbar'
-import { ThemeProvider } from 'next-themes'
-import HeroSection from '../components/HeroSection'
+// app/(home)/layout.jsx
+import React from 'react';
+import Navbar from '../components/Navbar';
+import AnimatedLayout from '../components/AnimatedLayout';
+import { ThemeProvider } from 'next-themes';
+import { Inter } from 'next/font/google'; // ✅ Import Inter font
 
-
-const inter = Inter({ subsets: ['latin'] })
+// ✅ Initialize the Inter font
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'BuddyBot',
-  description: 'Your daily mindful productivity assistant',
-  icons: {
-    icon: '/favicon.ico',
-  },
-  viewport: 'width=device-width, initial-scale=1',
-  keywords: ['AI Assistant', 'BuddyBot', 'Mindfulness', 'Productivity'],
-}
+  title: 'BuddyBot - Home',
+  description: 'Your personalized AI assistant',
+};
 
-export default function RootLayout({ children }) {
+export default function HomeLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head />
@@ -34,5 +29,5 @@ export default function RootLayout({ children }) {
         </ThemeProvider>
       </body>
     </html>
-  )
+  );
 }
