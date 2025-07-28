@@ -1,34 +1,36 @@
 'use client'
 
-import { signIn } from 'next-auth/react'
 import { useState } from 'react'
+import { signIn } from 'next-auth/react'
+import { toast } from 'react-hot-toast'
 
 export default function LoginPage() {
-  const [loading, setLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
 
-  const handleGoogleSignIn = async () => {
-    setLoading(true)
+  const loginWithGoogle = async () => {
+    setIsLoading(true)
     try {
       await signIn('google', { callbackUrl: '/' })
     } catch (error) {
-      console.error('Sign-in error:', error)
-      setLoading(false)
+      console.error(error)
+      toast.error('Login failed')
+      setIsLoading(false)
     }
   }
 
   return (
-    <div className="flex flex-1 items-center justify-center">
-      <div className="p-8 bg-gray-100 dark:bg-gray-900 rounded-xl shadow-md text-center">
-        <h1 className="text-2xl font-bold mb-6 text-black dark:text-white">
-          Sign in to BuddyBot
-        </h1>
-        <button
-          onClick={handleGoogleSignIn}
-          className="bg-white border border-gray-300 px-6 py-3 rounded-lg flex items-center gap-3 hover:shadow-md dark:bg-gray-800 dark:text-white"
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 px-4">
+      <div className="bg-white shadow-lg rounded-xl p-8 w-full max-w-md text-center">
+        <h2 className="text-2xl font-bold text-gray-800">Login to BuddyBot</h2>
+        <p className="text-gray-500 text-sm mt-2">Use your Google account to continue</p>
+
+        <Button
+          onClick={loginWithGoogle}
+          disabled={isLoading}
+          className="mt-6 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition"
         >
-          <img src="/google-icon.svg" alt="Google" className="w-5 h-5" />
-          {loading ? 'Signing in...' : 'Sign in with Google'}
-        </button>
+          {isLoading ? 'Signing in...' : 'Sign in with Google'}
+        </Button>
       </div>
     </div>
   )

@@ -26,7 +26,6 @@ export default function RootLayout({ children }) {
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <div className="bg-backgroundLight text-textLight dark:bg-backgroundDark dark:text-textDark min-h-screen">
             <Navbar />
-            <HeroSection />
             <main className="px-4 py-6 max-w-6xl mx-auto">{children}</main>
             <footer className="text-center text-sm text-gray-500 dark:text-gray-400 py-4">
               {new Date().getFullYear()} BuddyBot. All rights reserved.
