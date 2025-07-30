@@ -1,13 +1,12 @@
 from pydantic import BaseModel
-from datetime import datetime
+from bson import ObjectId
 
-class Note(BaseModel):
-    id: int
+class Task(BaseModel):
+    id: str = None
+    user_id: str
     title: str
-    content: str
-    created_at: datetime
+    description: str
+    completed: bool = False
 
-class Reminder(BaseModel):
-    id: int
-    message: str
-    remind_at: datetime
+    class Config:
+        orm_mode = True

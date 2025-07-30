@@ -1,14 +1,12 @@
 import openai
-import os
-from dotenv import load_dotenv
+from app.config import settings
 
-load_dotenv()
-openai.api_key = os.getenv("OPENAI_API_KEY")
+openai.api_key = settings.OPENAI_API_KEY
 
-async def generate_response(message: str, user_id: str = "default") -> str:
+async def generate_response(message: str, user_id: str) -> str:
     try:
         completion = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo",  # Or "gpt-4"
+            model="gpt-3.5-turbo",
             messages=[
                 {"role": "system", "content": "You are BuddyBot, a helpful and personalized assistant."},
                 {"role": "user", "content": message}

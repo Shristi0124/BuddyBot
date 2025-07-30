@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import Button from '../../components/ui/Button';
+import Button from '.bin/components/ui/Button';
 
 export default function AboutPage() {
   return (

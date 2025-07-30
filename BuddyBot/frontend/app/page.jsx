@@ -3,11 +3,11 @@
 import React, { useState } from "react";
 import { signIn } from "next-auth/react";
 import { toast } from "react-hot-toast";
-import HeroSection from "../components/HeroSection";
-import Button from "../components/ui/Button";
-import WeatherCard from "../components/WeatherCard";
-import Notes from "../components/Notes";
-import Reminders from "../components/Reminders";
+import HeroSection from "./components/HeroSection";
+import Button from "./components/ui/Button";
+import WeatherCard from "./components/WeatherCard";
+import Notes from "./components/Notes";
+import Reminders from "./components/Reminders";
 
 export default function LoginPage() {
   const [isLoading, setIsLoading] = useState(false);

@@ -1,7 +1,7 @@
 // app/(home)/layout.jsx
 import React from 'react';
-import Navbar from '../components/Navbar';
-import AnimatedLayout from '../components/AnimatedLayout';
+import Navbar from './components/Navbar';
+import AnimatedLayout from './components/AnimatedLayout';
 import { ThemeProvider } from 'next-themes';
 import { Inter } from 'next/font/google'; // ✅ Import Inter font
 

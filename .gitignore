@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-"BuddyBot/backend/venv/" 
-"__pycache__/" 
-"*.pyc" 
-".env" 
-"BuddyBot/backend/venv/" 
-"__pycache__/" 
-"*.pyc" 
-".env" 
-=======
 # Python
 __pycache__/
 *.pyc
@@ -25,4 +15,3 @@ ECHO is on.
 # System
 .DS_Store
 Thumbs.db
->>>>>>> 344c00060b6f37f148e3f69d1a48624acc46eead
