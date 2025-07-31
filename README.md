@@ -47,9 +47,8 @@ cd BuddyBot
 ### 2. 🔧 Backend Setup
 
 ```bash
-cd backend
-python -m venv venv
-venv\Scripts\activate         # On Windows
+
+        # On Windows
 # OR
 source venv/bin/activate     # On macOS/Linux
 

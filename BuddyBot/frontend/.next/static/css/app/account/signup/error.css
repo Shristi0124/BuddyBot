@@ -1,0 +1,17 @@
+/*!***********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[3]!./src/styles/error.module.css ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************/
+.error_container__BC1g1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 98vh;
+  width: -webkit-fill-available;
+}
+.error_container__BC1g1 > h2 {
+  margin-bottom: 20px;
+  color: var(--primary-color);
+  font-size: 2rem;
+}
+

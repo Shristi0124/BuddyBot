@@ -1,5 +1,6 @@
-import os
+# app/core/config.py
+class Settings:
+    PROJECT_NAME: str = "BuddyBot"
+    VERSION: str = "1.0.0"
 
-class Config:
-    DEBUG = os.getenv('DEBUG', True)
-    DATABASE_URI = os.getenv('DATABASE_URI', 'sqlite:///db.sqlite')
+settings = Settings()

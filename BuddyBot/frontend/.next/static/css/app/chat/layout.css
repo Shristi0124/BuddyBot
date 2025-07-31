@@ -1,0 +1,87 @@
+/*!*************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[3]!./src/styles/sidebar.module.css ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************/
+.sidebar_container__Ihped {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 4.7rem;
+  left: 0;
+  bottom: 0;
+  z-index: 70;
+  max-height: 90vh;
+  width: 230px;
+}
+.sidebar_slide-in__Mn5f9 {
+  animation: sidebar_slide-in__Mn5f9 0.5s forwards;
+}
+.sidebar_slide-out___sctE {
+  animation: sidebar_slide-out___sctE 0.5s forwards;
+}
+@keyframes sidebar_slide-in__Mn5f9 {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes sidebar_slide-out___sctE {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+.sidebar_box__InbjM {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.1);
+  height: 100%;
+  width: -webkit-fill-available;
+  padding: 0.1rem;
+  box-shadow: var(--box-shadow-larger-outset);
+}
+.sidebar_new-chat__U_IpD {
+  width: -webkit-fill-available;
+  padding: 0.5rem;
+  border-radius: var(--br-400);
+  font-size: 0.9rem;
+  color: var(--message-color);
+}
+.sidebar_new-chat__U_IpD:hover {
+  background-color: var(--model-bg);
+}
+.sidebar_toggle-sidebar__CUPzV {
+  animation: sidebar_slide-in__Mn5f9 0.5s forwards;
+}
+.sidebar_toggle-sidebar__CUPzV > svg {
+  color: var(--toogle-button-bg);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.sidebar_toggle-sidebar__CUPzV > svg:hover {
+  scale: 1.1;
+  color: var(--link-hover);
+}
+.sidebar_item__n_Zey {
+  width: -webkit-fill-available;
+  padding: 0.5rem;
+  border-radius: var(--br-400);
+  font-size: 0.9rem;
+  /* color: var(--message-color); */
+  color: var(--black-color);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+.sidebar_item__n_Zey:hover {
+  background-color: var(--model-bg);
+}
+

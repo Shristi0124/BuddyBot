@@ -1,11 +1,8 @@
+# app/api/v1/endpoints/task.py
 from fastapi import APIRouter
 
 router = APIRouter()
 
-@router.post("/create")
-async def create_task():
-    return {"message": "Create Task"}
-
-@router.get("/all")
-async def list_tasks():
-    return {"message": "List Tasks"}
+@router.get("/")
+async def task_root():
+    return {"message": "Task endpoint"}

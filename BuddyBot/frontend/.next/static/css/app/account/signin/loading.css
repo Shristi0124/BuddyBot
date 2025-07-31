@@ -1,0 +1,40 @@
+/*!*************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[3]!./src/styles/loading.module.css ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************/
+.loading_container__QFPKj {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--bg-primary);
+}
+.loading_item-container__HM4xp {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.2rem;
+}
+.loading_item__wIbi7 {
+  border-radius: 50%;
+  background-color: var(--primary-color);
+}
+.loading_item-1__sTjup {
+  animation: loading_pulse__2LYQN 0.4s ease 0s infinite alternate;
+}
+.loading_item-2__nC3Qp {
+  animation: loading_pulse__2LYQN 0.4s ease 0.2s infinite alternate;
+}
+.loading_item-3__KR0GH {
+  animation: loading_pulse__2LYQN 0.4s ease 0.4s infinite alternate;
+}
+@keyframes loading_pulse__2LYQN {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0.25;
+    transform: scale(0.75);
+  }
+}
+
