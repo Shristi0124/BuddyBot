@@ -3,7 +3,7 @@ from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
 import torch
 import yaml
 from sentence_transformers import SentenceTransformer
-from llama_index.embeddings.huggingface import HuggingFaceEmbedding
+from llama_index.embeddings import HuggingFaceEmbedding
 from llama_index.core import Settings
 from llama_index.llms.huggingface import HuggingFaceLLM
 from llama_index.core import PromptTemplate

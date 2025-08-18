@@ -10,8 +10,8 @@ import { ChatBotContextProvider } from "@/contexts/ChatBot-context";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "GenAi Mech hackathon",
-  description: "GenAi Mech hackathon 2024",
+  title: "Buddybot HealthCare",
+  description: "Heathcare Chatbot for internship 2025",
   icons: "robot.jpg",
 };
 

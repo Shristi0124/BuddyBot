@@ -18,7 +18,7 @@ const useGetchatById = () => {
       const responsedata = await response.json();
       if (responsedata.type === "Error") {
         NotificationHandler(
-          "GenAiMech HealthCare",
+          "BuddyBot HealthCare",
           responsedata.message,
           "Error"
         );
@@ -28,7 +28,7 @@ const useGetchatById = () => {
     } catch (err) {
       console.log(err);
       NotificationHandler(
-        "GenAiMech HealthCare",
+        "BuddyBot HealthCare",
         "Something went wrong",
         "Error"
       );

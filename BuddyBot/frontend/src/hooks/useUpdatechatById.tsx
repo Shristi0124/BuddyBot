@@ -36,7 +36,7 @@ const useUpdatechatById = () => {
       chatBotCtx.setIsLoading(false);
       if (responsedata.type === "Error") {
         NotificationHandler(
-          "GenAiMech HealthCare",
+          "Buddybot HealthCare",
           responsedata.message,
           "Error"
         );
@@ -47,7 +47,7 @@ const useUpdatechatById = () => {
       console.log(err);
       chatBotCtx.setIsLoading(false);
       NotificationHandler(
-        "GenAiMech HealthCare",
+        "Buddybot HealthCare",
         "Something went wrong",
         "Error"
       );

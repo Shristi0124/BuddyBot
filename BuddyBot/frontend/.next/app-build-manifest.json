@@ -1,17 +1,5 @@
 {
   "pages": {
-    "/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/page.css",
-      "static/chunks/app/page.js"
-    ],
-    "/layout": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/layout.css",
-      "static/chunks/app/layout.js"
-    ],
     "/error": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -24,17 +12,29 @@
       "static/css/app/loading.css",
       "static/chunks/app/loading.js"
     ],
-    "/account/signup/error": [
+    "/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/account/signup/error.css",
-      "static/chunks/app/account/signup/error.js"
+      "static/css/app/page.css",
+      "static/chunks/app/page.js"
+    ],
+    "/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/layout.css",
+      "static/chunks/app/layout.js"
     ],
     "/account/signup/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/account/signup/page.css",
       "static/chunks/app/account/signup/page.js"
+    ],
+    "/account/signup/error": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/account/signup/error.css",
+      "static/chunks/app/account/signup/error.js"
     ],
     "/account/signup/loading": [
       "static/chunks/webpack.js",
@@ -66,17 +66,17 @@
       "static/css/app/chat/[chatid]/loading.css",
       "static/chunks/app/chat/[chatid]/loading.js"
     ],
-    "/diagnosis/error": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/diagnosis/error.css",
-      "static/chunks/app/diagnosis/error.js"
-    ],
     "/diagnosis/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/diagnosis/page.css",
       "static/chunks/app/diagnosis/page.js"
+    ],
+    "/diagnosis/error": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/diagnosis/error.css",
+      "static/chunks/app/diagnosis/error.js"
     ],
     "/diagnosis/loading": [
       "static/chunks/webpack.js",
@@ -84,23 +84,28 @@
       "static/css/app/diagnosis/loading.css",
       "static/chunks/app/diagnosis/loading.js"
     ],
-    "/account/signin/page": [
+    "/form/[name]/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/account/signin/page.css",
-      "static/chunks/app/account/signin/page.js"
+      "static/css/app/form/[name]/page.css",
+      "static/chunks/app/form/[name]/page.js"
     ],
-    "/account/signin/error": [
+    "/form/[name]/error": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/account/signin/error.css",
-      "static/chunks/app/account/signin/error.js"
+      "static/css/app/form/[name]/error.css",
+      "static/chunks/app/form/[name]/error.js"
     ],
-    "/account/signin/loading": [
+    "/form/[name]/loading": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/account/signin/loading.css",
-      "static/chunks/app/account/signin/loading.js"
+      "static/css/app/form/[name]/loading.css",
+      "static/chunks/app/form/[name]/loading.js"
+    ],
+    "/not-found": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/not-found.js"
     ]
   }
 }

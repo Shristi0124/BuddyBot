@@ -20,7 +20,7 @@ const useCreateNewchat = () => {
       console.log(responsedata);
       if (responsedata.type === "Error") {
         NotificationHandler(
-          "GenAiMech HealthCare",
+          "BuddyBot HealthCare",
           responsedata.message,
           "Error"
         );
@@ -33,7 +33,7 @@ const useCreateNewchat = () => {
     } catch (err) {
       console.log(err);
       NotificationHandler(
-        "GenAiMech HealthCare",
+        "BuddyBot HealthCare",
         "Something went wrong",
         "Error"
       );
